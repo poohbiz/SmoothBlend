@@ -271,35 +271,6 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      (function () {
-        const header = document.querySelector("header");
-        const btn = document.querySelector(".nav-toggle");
-        const list = document.getElementById("primary-nav");
-
-        if (!btn || !list || !header) return;
-
-        btn.addEventListener("click", () => {
-          const open = header.getAttribute("data-nav-open") === "true";
-          header.setAttribute("data-nav-open", String(!open));
-          btn.setAttribute("aria-expanded", String(!open));
-        });
-
-        list.addEventListener("click", (e) => {
-          const target = e.target.closest("a");
-          if (!target) return;
-          header.setAttribute("data-nav-open", "false");
-          btn.setAttribute("aria-expanded", "false");
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            header.setAttribute("data-nav-open", "false");
-            btn.setAttribute("aria-expanded", "false");
-          }
-        });
-      })();
-    </script>
+    <script defer src="script.js"></script>
   </body>
 </html>
